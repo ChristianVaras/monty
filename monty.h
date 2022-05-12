@@ -45,6 +45,8 @@ void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+
 
 /* Functions_error */
 void push_error(FILE *fd, char *line, stack_t *stack, int count);
