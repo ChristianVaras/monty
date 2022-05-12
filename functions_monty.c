@@ -49,15 +49,12 @@ void _pall(stack_t **stack, unsigned int line_number)
  */
 void _pint(stack_t **stack, unsigned int line_number)
 {
-	stack_t *runner;
-
-	runner = *stack;
-	if (runner == NULL)
+	if (stack == NULL || *stack == NULL)
 	{
 		printf("L%d: can't pint, stack empty\n", line_number);
 		error_exit(stack);
 	}
-	printf("%d\n", runner->n);
+	printf("%d\n", (*stack)->n);
 }
 
 /**
@@ -80,7 +77,6 @@ void _pop(stack_t **stack, unsigned int line_number)
  * @stack: Stack list
  * @line_number: Number of the line
  */
-
 void _nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
