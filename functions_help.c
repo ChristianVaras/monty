@@ -19,6 +19,7 @@ int _isdigit(char *s)
 	{
 		if ((*tmp < '0' || *tmp > '9'))
 			return (0);
+		tmp++;
 	}
 	return (1);
 }
