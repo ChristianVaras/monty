@@ -18,9 +18,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 /**
  * struct instruction_s - opcoode and its function
@@ -32,8 +32,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 extern int data_item;
@@ -46,7 +46,7 @@ void _pall(stack_t **stack, unsigned int line_number);
 
 /* Functions_error */
 void push_error(FILE *fd, char *line, stack_t *stack, int count);
-void instruction_error(FILE *fd, char *line, stack_t *stack, char *count, int item);
+void inst_error(FILE *fd, char *line, stack_t *stack, char *count, int item);
 
 /* Functions_Help */
 void free_dlistint(stack_t *stack);

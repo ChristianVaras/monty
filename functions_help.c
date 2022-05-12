@@ -42,12 +42,12 @@ void free_dlistint(stack_t *stack)
 
 
 /**
- * new_node : added new_node
+ * new_Node : added new_node
  * @n: The value in the node
  * Return: the adress of the new node
  */
 
-stack_t *new_node(int n)
+stack_t *new_Node(int n)
 {
 	stack_t *new = NULL;
 
