@@ -36,24 +36,21 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/**
- * struct glob_s - global and its funcs
- * @fd: File descriptor
- * @line: Line to getline
- *
- * Description: To handle the file and getline
- */
-typedef struct glob_s
-{
-	FILE *fd;
-	char *line;
-} glob_t;
+extern int data_item;
+int get_opc(stack_t **stack, char *oprt, char *item, int count);
+void handler(char *filename);
 
+/* Functions_monty */
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
 
+/* Functions_error */
+void push_error(FILE *fd, char *line, stack_t *stack, int count);
+void instruction_error(FILE *fd, char *line, stack_t *stack, char *count, int item);
 
-/*Helper function */
+/* Functions_Help */
 void free_dlistint(stack_t *stack);
-stack_t *new_node(int n);
-int _isdigit(char *s);
+stack_t *new_Node(int n);
+int _isdigit(char *item);
 
 #endif
