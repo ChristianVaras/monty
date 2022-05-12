@@ -31,8 +31,6 @@ void handler(char *filename)
 	stack_t *stack = NULL;
 	FILE *file = fopen(filename, "r");
 
-	printf("LLeguo aquí");
-
 	if (file == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", filename);
