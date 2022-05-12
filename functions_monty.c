@@ -74,3 +74,15 @@ void _pop(stack_t **stack, unsigned int line_number)
 	}
 	delete_dnodeint_at_index(stack, 0);
 }
+
+/**
+ * _nop - function void
+ * @stack: Stack list
+ * @line_number: Number of the line
+ */
+
+void _nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
