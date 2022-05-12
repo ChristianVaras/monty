@@ -82,6 +82,7 @@ int get_opc(stack_t **stack, char *oprt, char *item, int count)
 		{"mul", _mul},
 		{"div", _div},
 		{"mod", _mod},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 
