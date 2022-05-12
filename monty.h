@@ -51,6 +51,6 @@ void inst_error(FILE *fd, char *line, stack_t *stack, char *count, int item);
 /* Functions_Help */
 void free_dlistint(stack_t *stack);
 stack_t *new_Node(int n);
-int _isdigit(char *item);
+int _isdigit(char *s);
 
 #endif
