@@ -2,13 +2,14 @@
 
 /**
  * _isdigit - Checks for a digit 0 through 9
- * @c: pointer to item
+ * @s: pointer to item
  * Return: 0 if is integer else 1
  */
 
 int _isdigit(char *s)
 {
 	char *tmp = s;
+
 	if (s == NULL)
 		return (0);
 
@@ -19,7 +20,7 @@ int _isdigit(char *s)
 	{
 		if ((*tmp < '0' || *tmp > '9'))
 			return (0);
-		tmp++;
+	tmp++;
 	}
 	return (1);
 }
@@ -28,6 +29,7 @@ int _isdigit(char *s)
  * free_dlistint - Free a list.
  * @stack: Head node.
  */
+
 void free_dlistint(stack_t *stack)
 {
 	stack_t *current = NULL;
@@ -43,7 +45,7 @@ void free_dlistint(stack_t *stack)
 
 
 /**
- * new_Node : added new_node
+ * new_Node - added new_node
  * @n: The value in the node
  * Return: the adress of the new node
  */

@@ -1,8 +1,12 @@
 #include "monty.h"
 
 /**
- * @brief
- *
+ * inst_error - Error handler
+ * @fd: is a file descriptor
+ * @line: is a buffer
+ * @stack: is a stack or queue
+ * @count: is a line command
+ * @item: number
  */
 
 void inst_error(FILE *fd, char *line, stack_t *stack, char *count, int item)
@@ -15,8 +19,11 @@ void inst_error(FILE *fd, char *line, stack_t *stack, char *count, int item)
 }
 
 /**
- * @brief
- *
+ * push_error - handle push error
+ * @fd: is a file desciptor
+ * @line: is a buffer
+ * @stack: is a stack or queue
+ * @count: is a line command
  */
 
 void push_error(FILE *fd, char *line, stack_t *stack, int count)
