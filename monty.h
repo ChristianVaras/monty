@@ -43,14 +43,24 @@ void handler(char *filename);
 /* Functions_monty */
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 
 /* Functions_error */
 void push_error(FILE *fd, char *line, stack_t *stack, int count);
 void inst_error(FILE *fd, char *line, stack_t *stack, char *item, int count);
 
+void _add(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **stack, unsigned int line_number);
+void _mul(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void _mod(stack_t **stack, unsigned int line_number);
+
 /* Functions_Help */
 void free_dlistint(stack_t *stack);
 stack_t *new_Node(int n);
-int _isdigit(char *item);
+int _isdigit(char *s);
+int delete_dnodeint_at_index(stack_t **head, unsigned int index);
+void error_exit(stack_t **stack);
 
 #endif

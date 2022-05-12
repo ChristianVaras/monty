@@ -40,3 +40,37 @@ void _pall(stack_t **stack, unsigned int line_number)
 		current = current->next;
 	}
 }
+
+/**
+ * _pint - print int a top of stack
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ *
+ */
+void _pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *runner;
+
+	runner = *stack;
+	if (runner == NULL)
+	{
+		printf("L%d: can't pint, stack empty\n", line_number);
+		error_exit(stack);
+	}
+	printf("%d\n", runner->n);
+}
+
+/**
+ * _pop - delete item at top of stack
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ */
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		printf("L%d: can't pop an empty stack\n", line_number);
+		error_exit(stack);
+	}
+	delete_dnodeint_at_index(stack, 0);
+}

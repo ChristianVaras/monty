@@ -31,8 +31,6 @@ void handler(char *filename)
 	stack_t *stack = NULL;
 	FILE *file = fopen(filename, "r");
 
-	printf("LLeguo aquí");
-
 	if (file == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", filename);
@@ -49,6 +47,7 @@ void handler(char *filename)
 		}
 		else if (*op_code == '#')
 			continue;
+
 		argument = strtok(NULL, " \n\t\r");
 		match = get_opc(&stack, op_code, argument, line_count);
 		if (match == 1)
@@ -76,6 +75,13 @@ int get_opc(stack_t **stack, char *oprt, char *item, int count)
 	instruction_t op[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"add", _add},
+		{"sub", _sub},
+		{"mul", _mul},
+		{"div", _div},
+		{"mod", _mod},
 		{NULL, NULL}
 	};
 
