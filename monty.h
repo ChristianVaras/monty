@@ -51,4 +51,9 @@ typedef struct glob_s
 
 
 
+/*Helper function */
+void free_dlistint(stack_t *stack);
+stack_t *new_node(int n);
+int _isdigit(char *s);
+
 #endif
