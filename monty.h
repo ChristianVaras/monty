@@ -46,7 +46,7 @@ void _pall(stack_t **stack, unsigned int line_number);
 
 /* Functions_error */
 void push_error(FILE *fd, char *line, stack_t *stack, int count);
-void inst_error(FILE *fd, char *line, stack_t *stack, char *count, int item);
+void inst_error(FILE *fd, char *line, stack_t *stack, char *item, int count);
 
 /* Functions_Help */
 void free_dlistint(stack_t *stack);
