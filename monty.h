@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -37,6 +38,7 @@ typedef struct instruction_s
 } instruction_t;
 
 extern int data_item;
+extern int sq_flag;
 int get_opc(stack_t **stack, char *oprt, char *item, int count);
 void handler(char *filename);
 
@@ -49,10 +51,13 @@ void _swap(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
+void _stack(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
 
 /* Error_prototypes */
 void push_error(FILE *fd, char *line, stack_t *stack, int count);
 void inst_error(FILE *fd, char *line, stack_t *stack, char *item, int count);
+void error_exit(stack_t **stack);
 
 /*Math_prototypes  */
 void _add(stack_t **stack, unsigned int line_number);
@@ -65,7 +70,6 @@ void _mod(stack_t **stack, unsigned int line_number);
 void free_dlistint(stack_t *stack);
 stack_t *new_Node(int n);
 int _isdigit(char *s);
-void error_exit(stack_t **stack);
 void cleanStack(stack_t **stack);
 
 #endif

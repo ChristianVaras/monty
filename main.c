@@ -1,4 +1,6 @@
 #include "monty.h"
+
+int sq_flag = 0;
 /**
  * main - entry into interpreter
  * @argc: argc counter
@@ -86,6 +88,8 @@ int get_opc(stack_t **stack, char *oprt, char *item, int count)
 		{"nop", _nop},
 		{"pchar", _pchar},
 		{"pstr", _pstr},
+		{"stack", _stack},
+		{"queue", _queue},
 		{NULL, NULL}
 	};
 
