@@ -34,7 +34,8 @@ void _sub(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		printf("L%d: can't sub, stack too short\n", line_number);
-		error_exit(stack);
+		cleanStack(stack);
+		exit(EXIT_FAILURE);
 	}
 	(*stack)->next->n -= (*stack)->n;
 	_pop(stack, line_number);
