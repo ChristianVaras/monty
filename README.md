@@ -4,7 +4,7 @@ Welcome to the Monty Bytecode Interpreter. This interpreter was built in the C l
 
 Our interpreter can be run as either a stack (LIFO) or queue (FIFO). Mode can be switched mid-script. The interpreter can handle a variety of Monty opcodes, including printing, mathematical operations, and more - all handled opcodes are listed below.
 
-## Monty byte code files
+## :computer: Monty byte code files
 
 Files containing Monty byte codes usually have the .m extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
 ```
@@ -64,6 +64,19 @@ Run the interpreter on a file:
 ```
 ./monty file.m
 ```
+## :file_folder: FILES
+---
+
+| Files | Description                    |
+| ------------- | ------------------------------ |
+| [main.c](https://github.com/ChristianVaras/monty/blob/main/main.c "main.c")      | Contains the main function that takes in the file and runs the parser. |
+| [monty.h](https://github.com/ChristianVaras/monty/blob/main/monty.h "monty.h")      | Functions Prototype header.       |
+| [functions_help.c](https://github.com/ChristianVaras/monty/blob/main/functions_help.c "functions_help.c")      | Contains helper functions for stack management and others.|
+| [functions_monty1.c](https://github.com/ChristianVaras/monty/blob/main/functions_monty1.c "functions_monty1.c")      | Contains functions like push, pall, pint, swap.|
+| [functions_monty1.c](https://github.com/ChristianVaras/monty/blob/main/functions_monty2.c "functions_monty2.c")      |  Contains functions like pop, pchar, pstr.|
+| [functions_monty3.c](https://github.com/ChristianVaras/monty/blob/main/functions_monty3.c "functions_monty3.c")      | Contains functions likestack, queue|
+| [math_func.c](https://github.com/ChristianVaras/monty/blob/main/math_func.c "math_func.c")      | Contains functions like add, sub, div, mul, mod.
+| [errors.c](https://github.com/ChristianVaras/monty/blob/main/errors.c "errors.c")      | Contains error handling functions. |
 
 
 ## :wrench: Monty Opcodes
@@ -144,7 +157,7 @@ You can install the bf interpreter to test your code: sudo apt-get install bf
 
 This script is in bf folder.
 
-## :pencil: Scripts
+## :paperclip: Scripts
 ---
 
 | Files | Description                    |
