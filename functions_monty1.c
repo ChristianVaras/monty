@@ -13,14 +13,23 @@ void _push(stack_t **stack, unsigned int line_number)
 	stack_t *new = NULL;
 	(void)line_number;
 
-	new = new_Node(data_item);
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	if (sq_flag == 1)
+	{
+		add_dnodeint_end(stack, data_item);
+	}
 
-	new->next = *stack;
-	if (*stack != NULL)
-		(*stack)->prev = new;
-	*stack = new;
+	if (sq_flag == 0)
+	{
+		add_dnodeint(stack, data_item);
+	}
+
 }
-
 /**
  * _pall - prints all the values on thestack starting from the top
  * @stack: HEAD of stack

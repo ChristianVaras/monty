@@ -69,7 +69,8 @@ void _mod(stack_t **stack, unsigned int line_number);
 
 /* Help_functions */
 void free_dlistint(stack_t *stack);
-stack_t *new_Node(int n);
+stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
 int _isdigit(char *s);
 void cleanStack(stack_t **stack);
 
