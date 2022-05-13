@@ -62,7 +62,6 @@ void _mod(stack_t **stack, unsigned int line_number);
 void free_dlistint(stack_t *stack);
 stack_t *new_Node(int n);
 int _isdigit(char *s);
-int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 void error_exit(stack_t **stack);
-
+void cleanStack(stack_t **stack);
 #endif
