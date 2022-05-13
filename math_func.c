@@ -49,7 +49,6 @@ void _sub(stack_t **stack, unsigned int line_number)
  * _mul - multiply top of stack and second top of stack
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
- *
  */
 void _mul(stack_t **stack, unsigned int line_number)
 {
@@ -69,19 +68,28 @@ void _mul(stack_t **stack, unsigned int line_number)
  */
 void _div(stack_t **stack, unsigned int line_number)
 {
-	if (*stack == NULL || (*stack)->next == NULL)
+	stack_t *curerent = NULL;
+	int div = 0;
+
+	if (!*stack || !(*stack)->next)
 	{
-		printf("L%d: can't div, stack too short\n", line_number);
-		error_exit(stack);
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		cleanStack(stack);
+		exit(EXIT_FAILURE);
 	}
-	if ((*stack)->n == 0)
+	else if ((*stack)->n == 0)
 	{
-		printf("L%d: division by zero\n", line_number);
-		error_exit(stack);
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		cleanStack(stack);
+		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n /= (*stack)->n;
+	curerent = *stack;
+	div = curerent->next->n / curerent->n;
+	curerent->next->n = div;
 	_pop(stack, line_number);
+
 }
+
 
 /**
  * _mod - mod top of stack and second top of stack
