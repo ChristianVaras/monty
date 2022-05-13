@@ -42,18 +42,20 @@ void _pall(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * _pint - print int a top of stack
- * @stack: pointer to linked list stack
- * @line_number: number of line opcode occurs on
- *
+ * _pint - prints the value at the top of the stack.
+ * @stack: Stack list
+ * @line_number: Number of the line
  */
 void _pint(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack || !stack)
 	{
-		printf("L%d: can't pint, stack empty\n", line_number);
+		dprintf(STDERR_FILENO, "L%d: can't pint, stack empty\n", line_number);
+		cleanStack(stack);
+		exit(EXIT_FAILURE);
 	}
-	dprintf(STDOUT_FILENO, "%d\n", (*stack)->n);
+	else
+		dprintf(STDOUT_FILENO, "%d\n", (*stack)->n);
 }
 
 /**
