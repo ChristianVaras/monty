@@ -1,8 +1,45 @@
-# :snake: Monty Interpreter (0x19. C - Stacks, Queues - LIFO, FIFO)
+# :snake: Monty Interpreter
 
 Welcome to the Monty Bytecode Interpreter. This interpreter was built in the C language. It reads Monty bytecode files of any extension (preferably `.m` although it doesn't matter), and interprets the opcodes contained.
 
 Our interpreter can be run as either a stack (LIFO) or queue (FIFO). Mode can be switched mid-script. The interpreter can handle a variety of Monty opcodes, including printing, mathematical operations, and more - all handled opcodes are listed below.
+
+## Monty byte code files
+
+Files containing Monty byte codes usually have the .m extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
+```
+fonsy20 ~/monty ±|main ✗|→ cat -e bytecodes/000.m
+push 0$
+push 1$
+push 2$
+  push 3$
+                   pall    $
+push 4$
+    push 5    $
+      push    6        $
+pall$
+fonsy20 ~/monty ±|main ✗|→
+```
+Monty byte code files can contain blank lines (empty or made of spaces only, and any additional text after the opcode or its required argument is not taken into account:
+```
+fonsy20 ~/monty ±|main ✗|→ cat -e bytecodes/001.m
+push 0 Push 0 onto the stack$
+push 1 Push 1 onto the stack$
+$
+push 2$
+  push 3$
+                   pall    $
+$
+$
+                           $
+push 4$
+$
+    push 5    $
+      push    6        $
+$
+pall This is the end of our program. Monty is awesome!$
+fonsy20 ~/monty ±|main ✗|→
+```
 
 ## :running: Getting Started
 
@@ -97,11 +134,17 @@ Run the interpreter on a file:
 
 # 🧠​ Brainf*ck script
 
+Brainfuck is an esoteric programming language,the language consists of only eight simple commands, a data pointer and an instruction pointer.Brainfuck simply requires one to break commands into microscopic steps.
+
+The language's name is a reference to the slang term brainfuck, which refers to things so complicated or unusual that they exceed the limits of one's understanding.
+
+[Language design](https://en.wikipedia.org/wiki/Brainfuck)
+
 You can install the bf interpreter to test your code: sudo apt-get install bf
 
 This script is in bf folder.
 
-## Scripts
+## :pencil: Scripts
 ---
 
 | Files | Description                    |
