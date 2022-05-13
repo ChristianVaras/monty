@@ -48,6 +48,7 @@ void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
+void _pstr(stack_t **stack, unsigned int line_number);
 
 /* Error_prototypes */
 void push_error(FILE *fd, char *line, stack_t *stack, int count);
@@ -66,4 +67,5 @@ stack_t *new_Node(int n);
 int _isdigit(char *s);
 void error_exit(stack_t **stack);
 void cleanStack(stack_t **stack);
+
 #endif
