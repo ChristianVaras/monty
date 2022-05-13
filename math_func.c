@@ -31,13 +31,17 @@ void _add(stack_t **stack, unsigned int line_number)
  */
 void _sub(stack_t **stack, unsigned int line_number)
 {
-	if (*stack == NULL || (*stack)->next == NULL)
+	stack_t *current = *stack;
+	int sub = 0;
+
+	if (!current || !current->next)
 	{
-		printf("L%d: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		cleanStack(stack);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n -= (*stack)->n;
+	sub = current->next->n - current->n;
+	current->next->n = sub;
 	_pop(stack, line_number);
 }
 
