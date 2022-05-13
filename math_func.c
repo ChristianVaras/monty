@@ -52,13 +52,20 @@ void _sub(stack_t **stack, unsigned int line_number)
  */
 void _mul(stack_t **stack, unsigned int line_number)
 {
-	if (*stack == NULL || (*stack)->next == NULL)
+	stack_t *current = NULL;
+	int mul = 0;
+
+	if (!*stack || !(*stack)->next)
 	{
-		printf("L%d: can't mul, stack too short\n", line_number);
-		error_exit(stack);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		cleanStack(stack);
+		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n *= (*stack)->n;
+	current = *stack;
+
+	mul = current->next->n * current->n;
 	_pop(stack, line_number);
+	current->next->n = mul;
 }
 
 /**
