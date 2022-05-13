@@ -52,24 +52,34 @@ void _pint(stack_t **stack, unsigned int line_number)
 	if (!*stack || !stack)
 	{
 		printf("L%d: can't pint, stack empty\n", line_number);
-		error_exit(stack);
+		cleanStack(stack);
+		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*stack)->n);
+	dprintf(STDOUT_FILENO, "%d\n", (*stack)->n);
 }
 
 /**
- * _pop - delete item at top of stack
- * @stack: pointer to linked list stack
- * @line_number: number of line opcode occurs on
+ * _pop - removes the top element of the stack.
+ * @stack: Stack list
+ * @line_number: Number of the line
  */
 void _pop(stack_t **stack, unsigned int line_number)
 {
-	if (*stack == NULL)
+	stack_t *current = NULL;
+
+	if (*stack == NULL || stack == NULL)
 	{
-		printf("L%d: can't pop an empty stack\n", line_number);
-		error_exit(stack);
+		dprintf(STDERR_FILENO, "L%d: can't pop an empty stack\n", line_number);
+		cleanStack(stack);
+		exit(EXIT_FAILURE);
 	}
-	delete_dnodeint_at_index(stack, 0);
+
+	current = *stack;
+
+	*stack = current->next;
+	if (current->next != NULL)
+		current->next->prev = current->prev;
+	free(current);
 }
 
 /**
