@@ -76,6 +76,7 @@ int get_opc(stack_t **stack, char *oprt, char *item, int count)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
+		{"swap", _swap},
 		{"pop", _pop},
 		{"add", _add},
 		{"sub", _sub},
