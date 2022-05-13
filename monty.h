@@ -50,6 +50,7 @@ void _nop(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 
+
 /* Error_prototypes */
 void push_error(FILE *fd, char *line, stack_t *stack, int count);
 void inst_error(FILE *fd, char *line, stack_t *stack, char *item, int count);
