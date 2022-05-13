@@ -73,7 +73,7 @@ Run the interpreter on a file:
 | [monty.h](https://github.com/ChristianVaras/monty/blob/main/monty.h "monty.h")      | Functions Prototype header.       |
 | [functions_help.c](https://github.com/ChristianVaras/monty/blob/main/functions_help.c "functions_help.c")      | Contains helper functions for stack management and others.|
 | [functions_monty1.c](https://github.com/ChristianVaras/monty/blob/main/functions_monty1.c "functions_monty1.c")      | Contains functions like push, pall, pint, swap.|
-| [functions_monty1.c](https://github.com/ChristianVaras/monty/blob/main/functions_monty2.c "functions_monty2.c")      |  Contains functions like pop, pchar, pstr.|
+| [functions_monty2.c](https://github.com/ChristianVaras/monty/blob/main/functions_monty2.c "functions_monty2.c")      |  Contains functions like pop, pchar, pstr.|
 | [functions_monty3.c](https://github.com/ChristianVaras/monty/blob/main/functions_monty3.c "functions_monty3.c")      | Contains functions likestack, queue|
 | [math_func.c](https://github.com/ChristianVaras/monty/blob/main/math_func.c "math_func.c")      | Contains functions like add, sub, div, mul, mod.
 | [errors.c](https://github.com/ChristianVaras/monty/blob/main/errors.c "errors.c")      | Contains error handling functions. |
